@@ -33,7 +33,7 @@ export default function Home() {
       </header>
 
       <section className={styles.hero} id="top">
-        <div className={styles.heroIdentity}>
+        {/* <div className={styles.heroIdentity}>
           <Image
             src="/brand/logo-green-black.png"
             alt="PCD 2026"
@@ -41,7 +41,7 @@ export default function Home() {
             height={760}
             priority
           />
-          <p>Processing&apos;s 25th anniversary</p>
+          <p>Processing's 25th anniversary</p>
         </div>
 
         <div className={styles.heroDate}>
@@ -54,7 +54,7 @@ export default function Home() {
           <p>NYU ITP</p>
           <p>Downtown Brooklyn</p>
           <p>Saturday</p>
-        </div>
+        </div> */}
       </section>
 
       <section className={styles.about} id="about">
