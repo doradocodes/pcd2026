@@ -266,6 +266,10 @@
   background: var(--olive);
 }
 
+.presenters {
+  font-size: clamp(4rem, 1.2vw, 6rem);
+}
+
 .tbd {
   position: relative;
   z-index: 2;
@@ -430,11 +434,20 @@
   background: var(--gray);
 }
 
-.volunteer p {
+.volunteer h2 {
   max-width: 28ch;
   margin: auto 0;
   color: var(--blue);
   font-size: clamp(2.2rem, 4.6vw, 5rem);
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+}
+
+.volunteer p {
+  max-width: 28ch;
+  margin: auto 0;
+  color: var(--black);
+  font-size: 2rem;
   letter-spacing: -0.055em;
   line-height: 0.94;
 }

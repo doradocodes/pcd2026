@@ -1,8 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Hero from "./Hero";
+import HeroV2 from "@/app/HeroV2";
 
 const OPEN_CALL_URL = "https://forms.gle/UBMeghY5D5mdf1cx7";
 const VOLUNTEER_URL = "https://forms.gle/JP6p3CTwrhuLqQXeA";
+const RSVP_URL = 'https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336?aff=oddtdtcreator&keep_tld=true';
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -25,37 +28,15 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#schedule">Schedule</a>
           <a href="#speakers">Speakers</a>
-          <a href="#open-call">Open call</a>
+          <a href="#volunteering">Volunteer</a>
         </nav>
-        <a className={styles.headerCta} href={OPEN_CALL_URL}>
-          Open call <Arrow />
+        <a className={styles.headerCta} href={RSVP_URL}>
+          RSVP <Arrow />
         </a>
       </header>
 
-      <section className={styles.hero} id="top">
-        {/* <div className={styles.heroIdentity}>
-          <Image
-            src="/brand/logo-green-black.png"
-            alt="PCD 2026"
-            width={1320}
-            height={760}
-            priority
-          />
-          <p>Processing's 25th anniversary</p>
-        </div>
-
-        <div className={styles.heroDate}>
-          <span>October</span>
-          <strong>03</strong>
-          <span>2026</span>
-        </div>
-
-        <div className={styles.heroPlace}>
-          <p>NYU ITP</p>
-          <p>Downtown Brooklyn</p>
-          <p>Saturday</p>
-        </div> */}
-      </section>
+      <Hero />
+      {/*<HeroV2 />*/}
 
       <section className={styles.about} id="about">
         <div className={styles.aboutGrid}>
@@ -101,7 +82,7 @@ export default function Home() {
 
       <section className={styles.program} aria-label="Event program">
         <article className={styles.schedule} id="schedule">
-          <div className={styles.tbd}>TBD</div>
+          <div className={styles.presenters}>Presenters</div>
           <div className={styles.ditherField} aria-hidden="true" />
         </article>
         <article className={styles.speakers} id="speakers">
@@ -116,18 +97,18 @@ export default function Home() {
         </article>
       </section>
 
-      <section className={styles.openCall} id="open-call">
-        <div className={styles.openCallGrid}>
-          <h2>Want to be a part of the programming?</h2>
-          <div className={styles.openCallAction}>
-            <p>Propose to be a presenter.</p>
-            <a href={OPEN_CALL_URL}>
-              Open call <Arrow />
-            </a>
-          </div>
-        </div>
-        <div className={styles.openCallPixels} aria-hidden="true" />
-      </section>
+      {/*<section className={styles.openCall} id="open-call">*/}
+      {/*  <div className={styles.openCallGrid}>*/}
+      {/*    <h2>Want to be a part of the programming?</h2>*/}
+      {/*    <div className={styles.openCallAction}>*/}
+      {/*      <p>Propose to be a presenter.</p>*/}
+      {/*      <a href={OPEN_CALL_URL}>*/}
+      {/*        Open call <Arrow />*/}
+      {/*      </a>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*  <div className={styles.openCallPixels} aria-hidden="true" />*/}
+      {/*</section>*/}
 
       <section className={styles.location} id="location">
         <div className={styles.locationGrid}>
@@ -151,8 +132,8 @@ export default function Home() {
 
       <section className={styles.community}>
         <article className={styles.volunteer} id="volunteering">
+          <h2>PCD is a volunteer-run event. We welcome volunteers at any capacity!</h2>
           <p>
-            PCD is a volunteer-run event. We welcome volunteers at any capacity!
             If you&apos;re interested in being a volunteer, please fill out this form.
           </p>
           <a href={VOLUNTEER_URL}>
@@ -183,8 +164,8 @@ export default function Home() {
           />
         </div>
         <div className={styles.footerLinks}>
-          <a href={OPEN_CALL_URL}>
-            Open call <Arrow />
+          <a href={RSVP_URL}>
+            RSVP <Arrow />
           </a>
           <a href={VOLUNTEER_URL}>
             Volunteer <Arrow />
