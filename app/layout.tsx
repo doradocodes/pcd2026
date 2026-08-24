@@ -60,7 +60,10 @@ export default function RootLayout({
       lang="en"
       className={`${rightSerif.variable} ${rightGrotesk.variable} ${paplane.variable} ${bitcount.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        {children}
+      </body>
     </html>
   );
 }

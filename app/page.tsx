@@ -13,7 +13,7 @@ function Arrow() {
 
 export default function Home() {
   return (
-    <main className={styles.page}>
+    <main className={styles.page} id="main-content">
       <header className={styles.header}>
         <a className={styles.wordmark} href="#top" aria-label="PCD 2026 home">
           <Image
@@ -38,9 +38,9 @@ export default function Home() {
       <Hero />
       {/*<HeroV2 />*/}
 
-      <section className={styles.about} id="about">
+      <section className={styles.about} id="about" aria-labelledby="about-heading">
         <div className={styles.aboutGrid}>
-          <h1>Processing Community Day is a global, community-led celebration.</h1>
+          <h1 id="about-heading">Processing Community Day is a global, community-led celebration.</h1>
           <div className={styles.aboutCopy}>
             <p>
               Processing Community Day is a global, community-led celebration
@@ -68,9 +68,9 @@ export default function Home() {
       <section className={styles.dateBand} aria-label="Event date">
         <div className={styles.dateDigits}>
           <span>10</span>
-          <i>/</i>
+          <i aria-hidden="true">/</i>
           <span>03</span>
-          <i>/</i>
+          <i aria-hidden="true">/</i>
           <span>26</span>
         </div>
         <div className={styles.dateNote}>
@@ -81,12 +81,12 @@ export default function Home() {
       </section>
 
       <section className={styles.program} aria-label="Event program">
-        <article className={styles.schedule} id="schedule">
-          <div className={styles.presenters}>Presenters</div>
+        <article className={styles.schedule} id="schedule" aria-label="Schedule">
+          <h2 className={styles.presenters}>Presenters</h2>
           <div className={styles.ditherField} aria-hidden="true" />
         </article>
-        <article className={styles.speakers} id="speakers">
-          <div className={styles.tbd}>TBD</div>
+        <article className={styles.speakers} id="speakers" aria-label="Speakers">
+          <div className={styles.tbd} aria-label="Speakers to be announced">TBD</div>
           <Image
             className={styles.speakerMotif}
             src="/brand/motif-asterisk-olive.png"
@@ -110,7 +110,7 @@ export default function Home() {
       {/*  <div className={styles.openCallPixels} aria-hidden="true" />*/}
       {/*</section>*/}
 
-      <section className={styles.location} id="location">
+      <section className={styles.location} id="location" aria-label="Event location">
         <div className={styles.locationGrid}>
           <div className={styles.locationText}>
             <p>PCD&apos;26 @ NYC will be hosted by</p>
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.community}>
+      <section className={styles.community} aria-label="Community">
         <article className={styles.volunteer} id="volunteering">
           <h2>PCD is a volunteer-run event. We welcome volunteers at any capacity!</h2>
           <p>
@@ -172,8 +172,9 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.footerContact}>
-          <a href="https://www.instagram.com/pcd.nyc.2026/">@pcd.nyc.2026</a>
+          <a href="https://www.instagram.com/pcd.nyc.2026/" aria-label="PCD 2026 on Instagram">@pcd.nyc.2026</a>
           <a href="mailto:team@pcd2026.nyc">team@pcd2026.nyc</a>
+          <p className={styles.footerCredit}>Website by Catherine Chen &amp; Mumu Li</p>
         </div>
       </footer>
     </main>

@@ -54,6 +54,9 @@
   pointer-events: none;
   will-change: transform;
   /*transform: translate(-50%,0);*/
+  &.outline {
+    outline-color: var(--green);
+  }
 }
 
 .orbitImg img {

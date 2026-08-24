@@ -267,7 +267,9 @@
 }
 
 .presenters {
+  margin: 0;
   font-size: clamp(4rem, 1.2vw, 6rem);
+  font-weight: inherit;
 }
 
 .tbd {
@@ -532,6 +534,13 @@
   font-family: var(--font-paplane), monospace;
   font-size: 0.85rem;
   text-align: right;
+}
+
+.footerCredit {
+  margin: 0.75rem 0 0;
+  color: var(--gray);
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 @media (max-width: 900px) {

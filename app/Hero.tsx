@@ -13,7 +13,7 @@ const IMAGES = [
   { src: "/brand/logo-blue-green.png", width: 200, height: 180, startAngle: 0.3 },
   { src: "/assets/pointerAsset 2@2x.png", width: 160, height: 160, startAngle: 1.8 },
   { src: "/assets/pointerAsset 6@2x.png", width: 160, height: 160, startAngle: 3.1 },
-  { src: "/assets/pointerAsset 7@2x.png", width: 160, height: 160, startAngle: 4.5 },
+  { src: "/assets/pointerAsset 7@2x.png", width: 160, height: 160, startAngle: 4.5, outline: true },
   { src: "/assets/pointerAsset 8@2x.png", width: 160, height: 160, startAngle: 5.2 },
   { src: "/assets/pointerAsset 9@2x.png", width: 160, height: 160, startAngle: 0.9 },
 ];
@@ -145,7 +145,7 @@ export default function Hero() {
           ref={(el) => {
             imgRefs.current[i] = el;
           }}
-          className={styles.orbitImg}
+          className={`${styles.orbitImg}${img.outline ? " outline" : ""}`}
         >
           <Image
             src={img.src}
