@@ -47,6 +47,9 @@
   padding: 0.65rem 0.85rem 0.55rem;
   color: var(--black);
   background: var(--green);
+  &:hover {
+    background: var(--orange);
+  }
 }
 
 .hero {
@@ -467,6 +470,11 @@
 .volunteer > a {
   color: var(--green);
   background: var(--blue);
+
+  &:hover {
+    background: var(--green);
+    color: var(--blue);
+  }
 }
 
 .history {
@@ -482,6 +490,10 @@
   margin-top: auto;
   color: var(--orange);
   background: var(--black);
+  &:hover {
+    background: var(--orange);
+    color: var(--black);
+  }
 }
 
 .history img {
@@ -525,6 +537,10 @@
   font-size: clamp(2.4rem, 5vw, 5.5rem);
   letter-spacing: -0.06em;
   line-height: 1;
+
+  &:hover {
+    color: var(--orange);
+  }
 }
 
 .footerContact {
