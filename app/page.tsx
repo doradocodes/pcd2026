@@ -2,10 +2,11 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Hero from "./Hero";
 import HeroV2 from "@/app/HeroV2";
+import Schedule from "@/app/schedule/Schedule";
 
 const OPEN_CALL_URL = "https://forms.gle/UBMeghY5D5mdf1cx7";
 const VOLUNTEER_URL = "https://forms.gle/JP6p3CTwrhuLqQXeA";
-const RSVP_URL = 'https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336?aff=oddtdtcreator&keep_tld=true';
+const RSVP_URL = "https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336?aff=oddtdtcreator&keep_tld=true";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -14,27 +15,6 @@ function Arrow() {
 export default function Home() {
   return (
     <main className={styles.page} id="main-content">
-      <header className={styles.header}>
-        <a className={styles.wordmark} href="#top" aria-label="PCD 2026 home">
-          <Image
-            src="/brand/logo-monochrome-horizontal.png"
-            alt="PCD 2026"
-            width={2420}
-            height={780}
-            priority
-          />
-        </a>
-        <nav className={styles.nav} aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#speakers">Speakers</a>
-          <a href="#volunteering">Volunteer</a>
-        </nav>
-        <a className={styles.headerCta} href={RSVP_URL}>
-          RSVP <Arrow />
-        </a>
-      </header>
-
       <Hero />
       {/*<HeroV2 />*/}
 
@@ -86,7 +66,13 @@ export default function Home() {
           <div className={styles.ditherField} aria-hidden="true" />
         </article>
         <article className={styles.speakers} id="speakers" aria-label="Speakers">
-          <div className={styles.tbd} aria-label="Speakers to be announced">TBD</div>
+          <h2 className={styles.tbd}>12 speakers</h2>
+          <h3 className={styles.speakersH3}>9 workshops</h3>
+          <h3 className={styles.speakersH3}>X exhibitors</h3>
+          <h3 className={styles.speakersH3}>3 performers</h3>
+          <a className={styles.scheduleCTA} href="/schedule">
+            See the schedule <Arrow />
+          </a>
           <Image
             className={styles.speakerMotif}
             src="/brand/motif-asterisk-olive.png"

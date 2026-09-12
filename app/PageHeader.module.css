@@ -1,0 +1,41 @@
+.pageHeader {
+  height: 40vh;
+  max-height: 400px;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.contentWrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden;
+
+  h1 {
+    font-family: var(--font-bitcount), monospace;
+    font-size: clamp(1rem, 10vw, 10rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 0.7;
+    color: var(--acid);
+    user-select: none;
+    z-index: 1;
+  }
+}
+
+.ditherField {
+  position: absolute;
+  right: -6%;
+  top: -14%;
+  width: 72%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, var(--orange) 0 3px, transparent 3.5px);
+  background-size: 18px 18px;
+  clip-path: polygon(0 0, 100% 17%, 79% 100%, 11% 78%);
+  z-index: 0;
+}

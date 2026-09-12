@@ -5,52 +5,6 @@
   background: var(--black);
 }
 
-.header {
-  position: relative;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: minmax(140px, 240px) 1fr auto;
-  gap: 2rem;
-  align-items: center;
-  min-height: 84px;
-  padding: 0 var(--gutter);
-  color: var(--gray);
-  background: var(--black);
-  border-bottom: 1px solid var(--olive);
-  font-family: var(--font-paplane), monospace;
-  text-transform: uppercase;
-}
-
-.wordmark {
-  width: min(100%, 218px);
-}
-
-.wordmark img {
-  width: 100%;
-  height: auto;
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: clamp(1rem, 3vw, 3rem);
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
-}
-
-.nav a,
-.headerCta {
-  border-bottom: 1px solid transparent;
-}
-
-.headerCta {
-  padding: 0.65rem 0.85rem 0.55rem;
-  color: var(--black);
-  background: var(--green);
-  &:hover {
-    background: var(--orange);
-  }
-}
 
 .hero {
   display: grid;
@@ -278,12 +232,26 @@
 .tbd {
   position: relative;
   z-index: 2;
-  margin-top: clamp(3rem, 7vw, 7rem);
+  margin-top: clamp(3rem, 5vw, 7rem);
+  margin-bottom: 2rem;
   font-family: var(--font-bitcount), monospace;
-  font-size: clamp(7rem, 19vw, 18rem);
+  font-size: 10rem;
   font-weight: 600;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.05em;
   line-height: 0.7;
+}
+
+.scheduleCTA {
+  padding: 0.65rem 0.85rem 0.55rem;
+  color: var(--black);
+  display: inline-block;
+  width: auto;
+  margin-top: 2rem;
+  background: var(--acid);
+  cursor: pointer;
+  &:hover {
+    background: var(--orange);
+  }
 }
 
 .ditherField {
@@ -560,14 +528,6 @@
 }
 
 @media (max-width: 900px) {
-  .header {
-    grid-template-columns: 1fr auto;
-  }
-
-  .nav {
-    display: none;
-  }
-
   .hero,
   .aboutGrid,
   .openCallGrid,
@@ -637,19 +597,6 @@
 }
 
 @media (max-width: 650px) {
-  .header {
-    min-height: 68px;
-  }
-
-  .wordmark {
-    width: 138px;
-  }
-
-  .headerCta {
-    padding: 0.5rem 0.65rem 0.4rem;
-    font-size: 0.72rem;
-  }
-
   .heroIdentity {
     min-height: 430px;
     padding: 2.5rem 1rem;
@@ -702,6 +649,7 @@
 
   .tbd {
     margin-top: 7rem;
+    margin-bottom: 2rem;
     font-size: 39vw;
   }
 
@@ -754,4 +702,9 @@
   html {
     scroll-behavior: auto;
   }
+}
+
+.speakersH3 {
+  font-size: 2rem;
+  line-height: 1;
 }
