@@ -9,6 +9,12 @@
   position: relative;
 }
 
+@media (max-width: 650px) {
+  .pageHeader {
+    height: 20vh;
+  }
+}
+
 .contentWrapper {
   width: 100%;
   margin: 0 auto;

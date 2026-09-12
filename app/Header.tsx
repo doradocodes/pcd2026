@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
+import MobileMenu from "./MobileMenu";
 
 const RSVP_URL = "https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336?aff=oddtdtcreator&keep_tld=true";
 
@@ -24,6 +25,7 @@ export default function Header() {
       <a className={styles.headerCta} href={RSVP_URL}>
         RSVP <span aria-hidden="true">↗</span>
       </a>
+      <MobileMenu />
     </header>
   );
 }
