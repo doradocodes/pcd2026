@@ -66,9 +66,9 @@ export default function Home() {
           <div className={styles.ditherField} aria-hidden="true" />
         </article>
         <article className={styles.speakers} id="speakers" aria-label="Speakers">
-          <h2 className={styles.tbd}>12 speakers</h2>
+          <h2 className={styles.tbd}>10 speakers</h2>
           <h3 className={styles.speakersH3}>9 workshops</h3>
-          <h3 className={styles.speakersH3}>X exhibitors</h3>
+          <h3 className={styles.speakersH3}>9 exhibitors</h3>
           <h3 className={styles.speakersH3}>3 performers</h3>
           <a className={styles.scheduleCTA} href="/schedule">
             See the schedule <Arrow />
