@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Schedule.module.css";
 import { ROOMS, ScheduleEvent } from './events';
 
-const START_HOUR = 10;
+const START_HOUR = 9;
 const END_HOUR = 21;
 const TOTAL_MINUTES = (END_HOUR - START_HOUR) * 60;
 
@@ -130,8 +130,8 @@ export default function Schedule({ events }: { events: ScheduleEvent[] }) {
                       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setSelected({ event, roomLabel: room.label }); }}
                       aria-label={`${event.title}${event.speaker ? `, ${event.speaker}` : ""}, ${formatTime(event.startTime)}–${formatTime(event.endTime)}`}
                     >
-                      <span className={styles.eventTime}>{formatTime(event.startTime)}-{formatTime(event.endTime)}</span>
-                      <span className={styles.eventTitle}>{event.title}</span>
+                      {/*<span className={styles.eventTime}>{formatTime(event.startTime)}-{formatTime(event.endTime)}</span>*/}
+                      <span className={styles.eventTitle}>{formatTime(event.startTime)}-{formatTime(event.endTime)} {event.title}</span>
                       {event.speaker && (
                         <span className={styles.eventSpeaker}>{event.speaker}</span>
                       )}

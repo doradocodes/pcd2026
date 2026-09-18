@@ -10,7 +10,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 72px repeat(5, minmax(160px, 1fr));
+  grid-template-columns: 72px repeat(4, minmax(160px, 1fr));
   min-width: 1200px;
 }
 
@@ -29,7 +29,7 @@
 
 .timeSlots {
   position: relative;
-  height: 3000px;
+  height: 3300px;
 }
 
 .timeLabel {
@@ -71,7 +71,7 @@
 
 .roomBody {
   position: relative;
-  height: 3000px;
+  height: 3500px;
 }
 
 .hourLine {
@@ -209,10 +209,6 @@
     background: var(--acid);
     color: var(--blue);
     border-color: var(--blue);
-  }
-  &[data-room="garage"] {
-    background: var(--olive);
-    color: white;
   }
 }
 

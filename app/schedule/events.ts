@@ -3,7 +3,6 @@ export const ROOMS = [
   { value: "classroom-1", label: "Classroom 1: Sound" },
   { value: "classroom-2", label: "Classroom 2: Education" },
   { value: "classroom-3", label: "Classroom 3: Art" },
-  { value: "garage", label: "Garage" },
 ] as const;
 
 type Room = (typeof ROOMS)[number]["value"];
@@ -208,18 +207,6 @@ export const events: ScheduleEvent[] = [
     endTime: "17:20",
     type: "workshop",
   },
-
-  // performances
-  {
-    title: "Performances",
-    id: slug("performances"),
-    speaker: "",
-    room: "garage",
-    startTime: "19:00",
-    endTime: "20:00",
-    type: "workshop",
-  },
-
 
   // lunch
   {
