@@ -7,6 +7,7 @@ import { ROOMS, ScheduleEvent } from './events';
 const START_HOUR = 9;
 const END_HOUR = 21;
 const TOTAL_MINUTES = (END_HOUR - START_HOUR) * 60;
+const RSVP_URL = 'https://forms.gle/JWfiAyRWDTqxQh3e6';
 
 function timeToMinutes(time: string): number {
   const [h, m] = time.split(":").map(Number);
@@ -37,6 +38,7 @@ const TYPE_LABELS: Record<ScheduleEvent["type"], string> = {
   performance: "Performance",
   break: "Break",
   panel: "Panel",
+  exhibition: "Exhibition",
 };
 
 function EventPopup({ event, roomLabel, onClose }: {
@@ -64,11 +66,17 @@ function EventPopup({ event, roomLabel, onClose }: {
         <h2 className={styles.popupTitle}>{event.title}</h2>
         {event.speaker && <p className={styles.popupSpeaker}>{event.speaker}</p>}
         <div className={styles.popupMeta}>
-          <span>{formatTime(event.startTime)}–{formatTime(event.endTime)}</span>
-          <span>{roomLabel}</span>
+          <span className={styles.popupTime}>{formatTime(event.startTime)}–{formatTime(event.endTime)}</span>
+          <span className={styles.popupRoom}>{roomLabel}</span>
         </div>
         {event.description && <p className={styles.popupDescription}>{event.description}</p>}
         {event.bio && <p className={styles.popupBio}>{event.bio}</p>}
+        {event.type === 'workshop' && <p>Bring your own laptop!</p>}
+        {event.type === 'workshop' && (
+          <a className={styles.rsvpCTA} href={RSVP_URL}>
+            RSVP for this workshop <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
     </div>
   );
@@ -130,7 +138,6 @@ export default function Schedule({ events }: { events: ScheduleEvent[] }) {
                       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setSelected({ event, roomLabel: room.label }); }}
                       aria-label={`${event.title}${event.speaker ? `, ${event.speaker}` : ""}, ${formatTime(event.startTime)}–${formatTime(event.endTime)}`}
                     >
-                      {/*<span className={styles.eventTime}>{formatTime(event.startTime)}-{formatTime(event.endTime)}</span>*/}
                       <span className={styles.eventTitle}>{formatTime(event.startTime)}-{formatTime(event.endTime)} {event.title}</span>
                       {event.speaker && (
                         <span className={styles.eventSpeaker}>{event.speaker}</span>

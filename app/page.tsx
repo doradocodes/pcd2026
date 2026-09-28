@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Hero from "./Hero";
 import HeroV2 from "@/app/HeroV2";
 import Schedule from "@/app/schedule/Schedule";
+import sponsors from "./sponsors";
 
 const OPEN_CALL_URL = "https://forms.gle/UBMeghY5D5mdf1cx7";
 const VOLUNTEER_URL = "https://forms.gle/JP6p3CTwrhuLqQXeA";
@@ -66,9 +67,9 @@ export default function Home() {
           <div className={styles.ditherField} aria-hidden="true" />
         </article>
         <article className={styles.speakers} id="speakers" aria-label="Speakers">
-          <h2 className={styles.tbd}>10 speakers</h2>
+          <h2 className={styles.tbd}>19 exhibitions</h2>
+          <h3 className={styles.speakersH3}>10 speakers</h3>
           <h3 className={styles.speakersH3}>9 workshops</h3>
-          <h3 className={styles.speakersH3}>9 exhibitors</h3>
           <h3 className={styles.speakersH3}>3 performers</h3>
           <a className={styles.scheduleCTA} href="/schedule">
             See the schedule <Arrow />
@@ -138,6 +139,18 @@ export default function Home() {
             height={430}
           />
         </article>
+      </section>
+
+      <section className={styles.sponsors} id="sponsors" aria-label="Sponsors">
+        <h2 className={styles.sponsorsHeading}>Sponsors</h2>
+        <div className={styles.sponsorLogos}>
+          {sponsors.map((s) => (
+            <a key={s.name} className={styles.sponsorLogoWrapper} href={s.url} target="_blank" rel="noopener noreferrer">
+              <Image src={s.logo} alt={s.name} width={200} height={80} />
+              <p>{s.name}</p>
+            </a>
+          ))}
+        </div>
       </section>
 
       <footer className={styles.footer}>

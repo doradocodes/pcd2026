@@ -3,10 +3,11 @@ export const ROOMS = [
   { value: "classroom-1", label: "Classroom 1: Sound" },
   { value: "classroom-2", label: "Classroom 2: Education" },
   { value: "classroom-3", label: "Classroom 3: Art" },
+  { value: "exhibition", label: "Exhibition Space" },
 ] as const;
 
 type Room = (typeof ROOMS)[number]["value"];
-type EventType = "talk" | "workshop" | "performance" | "break" | "panel";
+type EventType = "talk" | "workshop" | "performance" | "break" | "panel" | "exhibition";
 type Slug = string & { readonly __brand: "Slug" };
 const slug = (s: string) => s as Slug;
 

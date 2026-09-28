@@ -10,7 +10,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 72px repeat(4, minmax(160px, 1fr));
+  grid-template-columns: 72px repeat(5, minmax(160px, 1fr));
   min-width: 1200px;
 }
 
@@ -29,7 +29,7 @@
 
 .timeSlots {
   position: relative;
-  height: 3300px;
+  height: 3500px;
 }
 
 .timeLabel {
@@ -98,7 +98,8 @@
 
 .event:hover,
 .event:focus-visible {
-  filter: brightness(1.2);
+  transition: all 0.3s ease;
+  opacity: 0.5;
   z-index: 10;
   outline: none;
 }
@@ -167,16 +168,24 @@
 .popupMeta {
   display: flex;
   gap: 1.5rem;
-  font-family: var(--font-paplane), monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+
   opacity: 0.8;
   padding-bottom: 1rem;
   border-bottom: 1px solid currentColor;
+  margin-bottom: 1rem;
+}
+
+.popupTime {
+
+}
+
+.popupRoom {
+  font-family: var(--font-paplane), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .popupDescription {
-  margin: 1rem 0 0;
   font-size: 1rem;
   line-height: 1.4;
   opacity: 0.9;
@@ -184,7 +193,7 @@
 
 .popupBio {
   padding-top: 1rem;
-  margin: 1rem 0 0;
+  margin: 1rem 0;
   font-size: 1rem;
   line-height: 1.4;
   opacity: 0.9;
@@ -218,8 +227,8 @@
   border-left: 1px solid var(--orange);
 }
 
-.panel {
-  background: color-mix(in srgb, var(--blue) 60%, var(--black));
+.exhibition {
+  background: color-mix(in srgb, var(--olive) 60%, var(--black));
   color: var(--acid);
   border-left: 1px solid var(--acid);
 }
@@ -248,6 +257,17 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   opacity: 0.8;
+}
+
+.rsvpCTA {
+  display: inline-block;
+  margin: 1rem 0 0.5rem 0;
+  padding: 0.65rem 0.85rem 0.55rem;
+  color: var(--black);
+  background: var(--green);
+  &:hover {
+    background: var(--orange);
+  }
 }
 
 /*@media (max-width: 768px) {*/

@@ -58,6 +58,7 @@ function normalizeType(raw: string): EventType {
   if (t.includes("performance")) return "performance";
   if (t.includes("break") || t.includes("lunch")) return "break";
   if (t.includes("panel")) return "panel";
+  if (t.includes("exhibition")) return "exhibition";
   return "talk";
 }
 
