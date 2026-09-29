@@ -23,7 +23,7 @@ export default function Header() {
         <a href="/#volunteering">Volunteer</a>
       </nav>
       <a className={styles.headerCta} href={RSVP_URL}>
-        RSVP <span aria-hidden="true">↗</span>
+        Register <span aria-hidden="true">↗</span>
       </a>
       <MobileMenu />
     </header>

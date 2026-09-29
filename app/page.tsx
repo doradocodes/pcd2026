@@ -164,7 +164,7 @@ export default function Home() {
         </div>
         <div className={styles.footerLinks}>
           <a href={RSVP_URL}>
-            RSVP <Arrow />
+            Register now <Arrow />
           </a>
           <a href={VOLUNTEER_URL}>
             Volunteer <Arrow />
