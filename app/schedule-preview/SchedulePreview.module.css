@@ -27,6 +27,8 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--acid);
+  user-select: none;
+  cursor: pointer;
 }
 
 .clock {

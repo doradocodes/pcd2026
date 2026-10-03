@@ -56,14 +56,27 @@ export default function SchedulePreview({ events }: { events: ScheduleEvent[] })
   }, []);
 
   useEffect(() => {
-    if (!now || !scrollRef.current || !gridRef.current) return;
-    const minutes = nowToMinutes();
-    if (minutes < 0 || minutes > TOTAL_MINUTES) return;
-    const gridHeight = gridRef.current.scrollHeight;
-    const pct = minutes / TOTAL_MINUTES;
-    const targetScrollTop = gridHeight * pct - scrollRef.current.clientHeight * 0.35;
-    scrollRef.current.scrollTo({ top: Math.max(0, targetScrollTop), behavior: "smooth" });
-  }, [now]);
+    let rafId: number;
+    function tick() {
+      const scroll = scrollRef.current;
+      const grid = gridRef.current;
+      if (scroll && grid) {
+        const minutes = nowToMinutes();
+        if (minutes >= 0 && minutes <= TOTAL_MINUTES) {
+          const pct = minutes / TOTAL_MINUTES;
+          const target = Math.max(0, grid.scrollHeight * pct - scroll.clientHeight * 0.35);
+          const current = scroll.scrollTop;
+          const diff = target - current;
+          if (Math.abs(diff) > 0.5) {
+            scroll.scrollTop = current + diff * 0.05;
+          }
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   const nowMinutes = now ? nowToMinutes() : null;
   const nowPct =
@@ -78,7 +91,16 @@ export default function SchedulePreview({ events }: { events: ScheduleEvent[] })
   return (
     <div className={styles.fullscreen}>
       <div className={styles.topBar}>
-        <span className={styles.topBarTitle}>Processing Community Day NYC 2026</span>
+        <span
+          className={styles.topBarTitle}
+          onDoubleClick={() => {
+            if (!document.fullscreenElement) {
+              void document.documentElement.requestFullscreen();
+            } else {
+              void document.exitFullscreen();
+            }
+          }}
+        >Processing Community Day NYC 2026</span>
         {now && <span className={styles.clock}>{formatClock(now)}</span>}
       </div>
 
